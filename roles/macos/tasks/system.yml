@@ -36,7 +36,6 @@
       key: persistent-apps
       type: array
       value: []
-      when: devbox_first_run
     - name: Set Dock Icon Size
       key: tilesize
       type: int

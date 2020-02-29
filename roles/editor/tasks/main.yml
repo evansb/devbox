@@ -5,7 +5,7 @@
   command: code --install-extension {{ extension }}
   loop_control:
     loop_var: extension
-  loop: "{{ vscode_extensions }}"
+  loop: "{{ editor_vscode_extensions }}"
 
 - name: Tap Homebrew Fonts
   homebrew_tap: name=homebrew/cask-fonts

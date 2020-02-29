@@ -1,6 +1,9 @@
 - name: Install VSCode
   homebrew_cask: name=visual-studio-code state=present
 
+- name: Configure VSCode
+  template: src=settings.json.j2 dest={{ editor_vscode_config_path }}
+
 - name: Install VSCode Extensions
   command: code --install-extension {{ extension }}
   loop_control:

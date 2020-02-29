@@ -1,2 +1,4 @@
 editor_font_family: 'JetBrains Mono'
+editor_font_size: 14
 editor_vscode_extensions: []
+editor_vscode_config_path: ~/Library/Application Support/Code/User/settings.json

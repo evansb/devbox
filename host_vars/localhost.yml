@@ -8,6 +8,7 @@ macos_sidebar_icon_size: 2
 macos_dock_icon_size: 36
 
 editor_font_family: 'JetBrains Mono'
+editor_font_size: 14
 editor_vscode_extensions:
   - vscodevim.vim
   - ms-python.python

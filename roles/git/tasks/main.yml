@@ -1,0 +1,16 @@
+- name: Install Git
+  homebrew: name=git state=present
+
+- name: Generate SSH Keypair
+  block:
+    - file: path=~/.ssh state=directory
+    - openssh_keypair:
+        path: ~/.ssh/id_rsa
+        size: 2048
+        comment: evanlhoini@gmail.com
+
+- name: Copy Global Ignorefile
+  copy: src=.gitignore_global dest={{ git_global_gitignore_path }}
+
+- name: Configure Git
+  template: src=.gitconfig.j2 dest=~/.gitconfig

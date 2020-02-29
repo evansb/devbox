@@ -1,0 +1,7 @@
+- name: Install Karabiner Elements
+  homebrew_cask: name=karabiner-elements
+
+- name: Configure Karabiner Elements
+  block:
+    - file: path=~/.config/karabiner state=directory
+    - copy: src=karabiner.json dest=~/.config/karabiner/karabiner.json

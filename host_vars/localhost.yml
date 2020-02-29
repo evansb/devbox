@@ -1,0 +1,13 @@
+devbox_first_run: no
+
+user_full_name: Evan Sebastian
+user_email: evanlhoini@gmail.com
+
+macos_enable_natural_scolling: false
+macos_sidebar_icon_size: 2
+macos_dock_icon_size: 36
+
+vscode_extensions:
+  - vscodevim.vim
+  - ms-python.python
+  - editorconfig.editorconfig

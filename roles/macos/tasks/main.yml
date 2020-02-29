@@ -1,0 +1,8 @@
+- name: Configure System Settings
+  import_tasks: system.yml
+
+- name: Configure Keyboard Mapping
+  import_tasks: keyboard.yml
+
+- name: Install Spectacle Window Manager
+  homebrew_cask: name=spectacle

@@ -1,0 +1,2 @@
+git_editor: vim
+git_global_gitignore_path: ~/.gitignore_global

@@ -1,0 +1,47 @@
+- name: Configure Global Settings
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    state: present
+  loop_control:
+    label: "{{ item.name }}"
+  loop:
+    - name: Set Sidebar Icon Size
+      key: NSTableViewDefaultSizeMode
+      type: int
+      value: "{{ macos_sidebar_icon_size | int }}"
+    - name: Enable/Disable Natural Scrolling
+      key: com.apple.swipescrolldirection
+      type: bool
+      value: "{{ macos_enable_natural_scrolling }}"
+
+- name: Configure Dock Settings
+  register: dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    state: present
+  loop_control:
+    label: "{{ item.name }}"
+  loop:
+    - name: Automatically Show/Hide the Dock
+      key: autohide
+      type: bool
+      value: true
+    - name: Remove Default Persistent Apps from the Dock
+      key: persistent-apps
+      type: array
+      value: []
+      when: devbox_first_run
+    - name: Set Dock Icon Size
+      key: tilesize
+      type: int
+      value: "{{ macos_dock_icon_size | int }}"
+
+- name: Restart Dock
+  command: killall Dock
+  when: dock.changed

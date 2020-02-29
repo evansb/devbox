@@ -39,7 +39,7 @@ Follow this steps to bootstrap new macOS installation.
     $ cd
     $ git clone https://github.com/evansb/devbox
     $ cd devbox
-    $ ansible-playbook -e "devbox_first_run=yes" --main.yml
+    $ ansible-playbook -e "devbox_first_run=yes" main.yml
     ```
 
 ## License

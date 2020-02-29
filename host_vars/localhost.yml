@@ -11,3 +11,5 @@ vscode_extensions:
   - vscodevim.vim
   - ms-python.python
   - editorconfig.editorconfig
+
+editor_font_family: 'JetBrains Mono'

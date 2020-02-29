@@ -15,12 +15,7 @@ ansible >=2.9
 
 Follow this steps to bootstrap new macOS installation.
 
-1. Install Homebrew. This will install XCode Command Line Tools.
-
-    ```bash
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ```
-
+1. Install [Homebrew](https://brew.sh).
 2. Turn off Homebrew Analytics.
 
     ```

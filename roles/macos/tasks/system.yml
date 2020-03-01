@@ -32,6 +32,26 @@
       key: NSNavPanelExpandedStateForPrint2
       type: bool
       value: true
+    - name: Disable Autocorrect
+      key: NSAutomaticSpellingCorrectionEnabled
+      type: bool
+      value: true
+    - name: Disable Smart Quotes
+      key: NSAutomaticQuoteSubstitutionEnabled
+      type: bool
+      value: true
+    - name: Disable Smart Dashes
+      key: NSAutomaticDashSubstitutionEnabled
+      type: bool
+      value: true
+    - name: Disable Automatic Capitalisation
+      key: NSAutomaticCapitalizationEnabled
+      type: bool
+      value: true
+    - name: Enable Font Smoothing on Non-Apple Display
+      key: AppleFontSmoothing
+      type: int
+      value: 1
 
 - name: Configure Dock Settings
   register: dock
@@ -56,6 +76,10 @@
       key: tilesize
       type: int
       value: "{{ macos_dock_icon_size | int }}"
+    - name: Change minimize/maximize effect
+      key: mineffect
+      type: string
+      value: "scale"
 
 - name: Restart Dock
   command: killall Dock

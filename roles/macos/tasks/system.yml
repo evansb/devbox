@@ -16,6 +16,22 @@
       key: com.apple.swipescrolldirection
       type: bool
       value: "{{ macos_enable_natural_scrolling }}"
+    - name: Expand Save Panel by Default
+      key: NSNavPanelExpandedStateForSaveMode
+      type: bool
+      value: true
+    - name: Expand Save Panel v2 by Default
+      key: NSNavPanelExpandedStateForSaveMode2
+      type: bool
+      value: true
+    - name: Expand Print Panel by Default
+      key: NSNavPanelExpandedStateForPrint
+      type: bool
+      value: true
+    - name: Expand Print Panel v2 by Default
+      key: NSNavPanelExpandedStateForPrint2
+      type: bool
+      value: true
 
 - name: Configure Dock Settings
   register: dock

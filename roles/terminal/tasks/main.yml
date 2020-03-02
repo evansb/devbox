@@ -1,0 +1,16 @@
+- name: Install ZSH
+  homebrew: name=zsh
+
+- name: Install Zpresto
+  block:
+    - git:
+        repo: https://github.com/sorin-ionescu/prezto.git
+        update: no
+        dest: ~/.zprezto
+        accept_hostkey: yes
+    - stat: path=~/.zlogin
+      register: zlogin
+    - when: zlogin.stat.exists == false
+      shell: ./prezto_postinstall.sh
+      args:
+        chdir: "{{ role_path }}/files"

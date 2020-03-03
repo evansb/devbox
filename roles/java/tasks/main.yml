@@ -1,0 +1,13 @@
+- name: Check if SDKMan is Installed
+  stat: path=~/.sdkman
+  register: sdkman
+
+- name: Install SDKMan
+  block:
+    - get_url: url=https://get.sdkman.io dest=/tmp/sdkman.sh mode=755
+    - command: zsh /tmp/sdkman.sh
+    - file: path=/tmp/sdkman.sh state=absent
+  when: not sdkman.stat.exists
+
+- name: Install IntelliJ IDEA
+  homebrew_cask: name=intellij-idea-ce

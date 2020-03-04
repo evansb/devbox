@@ -5,3 +5,14 @@ email = {{ user_email }}
 [core]
 editor = {{ git_editor }}
 excludesfile = {{ git_global_gitignore_path }}
+
+[alias]
+st = status --porcelain
+br = branch
+co = checkout
+ci = commit
+lol = log --decorate --pretty=oneline --abbrev-commit
+undo = reset --soft HEAD^
+up = !git fetch && git rebase --autostash FETCH_HEAD
+poh = push origin HEAD -f
+pom = pull origin master

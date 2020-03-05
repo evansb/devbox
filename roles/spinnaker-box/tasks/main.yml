@@ -1,0 +1,15 @@
+- name: Configure Devbox
+  become: yes
+  block:
+  - name: Install JRE 8
+    apt: name=openjdk-8-jre-headless state=present
+  - name: Install Redis Server
+    apt: name=redis-server state=present
+  - name: Enable Redis
+    systemd: name=redis-server enabled=true state=started
+  - name: Add NGINX Repository
+    apt_repository: repo=ppa:nginx/stable
+  - name: Install NGINX
+    apt: name=nginx state=present
+  - name: Enable NGINX
+    systemd: name=nginx enabled=true state=started

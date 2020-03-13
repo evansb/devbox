@@ -6,3 +6,6 @@
 
 - name: Install Spectacle Window Manager
   homebrew_cask: name=spectacle
+
+- name: Install KeepingYouAwake
+  homebrew_cask: name=keepingyouawake

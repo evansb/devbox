@@ -1,0 +1,31 @@
+- name: Create Spinnaker Directory
+  file: path=~/spinnaker state=directory
+
+- name: Clone Spinnaker Repository
+  git:
+    repo: "https://github.com/spinnaker/{{ repo }}"
+    update: false
+    dest: ~/spinnaker/{{ repo }}
+    remote: upstream
+  loop_control:
+    loop_var: repo
+  loop:
+    - clouddriver
+    - community
+    - deck
+    - echo
+    - fiat
+    - front50
+    - gate
+    - governance
+    - halyard
+    - igor
+    - kayenta
+    - keel
+    - keiko
+    - orca
+    - rosco
+    - spinnaker
+    - spinnaker-gradle-project
+    - spinnaker.github.io
+    - swabbie
